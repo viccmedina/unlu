@@ -1,2 +1,4 @@
-site_name: My Docs
+site_name: AyGR UNLu - Medina, M. Victoria
+extra_css:
+    - css/style.css
 theme: cosmo
