@@ -1,0 +1,10 @@
+que tiene en particlar la MIB-II ? por que todos la implementan?
+
+two rate color marker, porque ambos baldes disminuyen si el tamaño del paquete es menor a la cantidad
+de fichar que hay en ambos baldes? que beneficio hay con ese comportamiento?
+
+en el encolado de "deficit de round robin", dado que si el quantum del momento no es lo suficientemente
+grande para dar servicio en esa ronda, que se hace con el mismo? se suma para que en la próxima ronda se
+evalúe si es lo suficientemente grande para dar servicio al paquete en la cola determinada?
+
+

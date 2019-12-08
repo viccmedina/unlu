@@ -1,0 +1,182 @@
+busqueda de dispositivos en la red con nmap 170.210.101.0/24
+
+
+root@Redes:~# nmap -sU -p U:161 170.210.101.0/24
+Starting Nmap 6.47 ( http://nmap.org ) at 2016-08-25 17:13 ART
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+Nmap scan report for 170.210.101.92
+Host is up (0.0032s latency).
+PORT    STATE         SERVICE
+161/udp open|filtered snmp
+
+Nmap scan report for 170.210.101.99
+Host is up (0.0026s latency).
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap scan report for 170.210.101.100
+Host is up (0.0071s latency).
+PORT    STATE         SERVICE
+161/udp open|filtered snmp
+
+Nmap scan report for 170.210.101.102
+Host is up (0.0036s latency).
+PORT    STATE         SERVICE
+161/udp open|filtered snmp
+
+Nmap scan report for 170.210.101.104
+Host is up (0.013s latency).
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap scan report for 170.210.101.122
+Host is up (0.0028s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.126
+Host is up (0.0015s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.150
+Host is up (0.0024s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.151
+Host is up (0.00097s latency).
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap scan report for 170.210.101.156
+Host is up (0.0024s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.157
+Host is up (0.0024s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.159
+Host is up (0.0023s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.184
+Host is up (0.0022s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.230
+Host is up (0.0034s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.231
+Host is up (0.0034s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.232
+Host is up (0.0034s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.233
+Host is up (0.0035s latency).
+PORT    STATE  SERVICE
+161/udp closed snmp
+
+Nmap scan report for 170.210.101.240
+Host is up (0.0033s latency).
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap scan report for 170.210.101.248
+Host is up (0.0024s latency).
+PORT    STATE         SERVICE
+161/udp open|filtered snmp
+
+Nmap scan report for 170.210.101.251
+Host is up (0.012s latency).
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap scan report for 170.210.101.252
+Host is up (0.012s latency).
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap done: 256 IP addresses (21 hosts up) scanned in 23.00 seconds
+root@Redes:~# snmp get -v1 -c public 170.210.101.99
+bash: snmp: no se encontró la orden
+root@Redes:~# snmpget -v1 -c public 170.210.101.99
+Created directory: /var/lib/snmp/mib_indexes
+Missing object name
+USAGE: snmpget [OPTIONS] AGENT OID [OID]...
+
+
+root@Redes:~# snmpget -v1 -c public 170.210.101.252 1.3.6.1.2.1.1.1             mib     
+Timeout: No Response from 170.210.101.252.
+root@Redes:~# snmpget -v1 -c public 170.210.101.102 1.3.6.1.2.1.1.1
+Error in packet
+Reason: (noSuchName) There is no such variable name in this MIB.
+Failed object: iso.3.6.1.2.1.1.1
+
+root@Redes:~# snmpget -v2c -c public 170.210.101.102 1.3.6.1.2.1.1.1
+iso.3.6.1.2.1.1.1 = No Such Instance currently exists at this OID /*ERROR*/
+root@Redes:~# snmpget -v2c -c public 170.210.101.252 1.3.6.1.2.1.1.1
+Timeout: No Response from 170.210.101.252.
+root@Redes:~# snmpget -v2c -c public 170.210.101.252 1.3.6.1.2.1.1.5
+Timeout: No Response from 170.210.101.252.
+root@Redes:~# snmpget -v2c -c public 170.210.101.102 1.3.6.1.2.1.1.5
+iso.3.6.1.2.1.1.5 = No Such Instance currently exists at this OID
+root@Redes:~# snmpget -v2c -c public 170.210.101.102 1.3.6.1.2.1.1.5.0
+iso.3.6.1.2.1.1.5.0 = STRING: "409-Samsung"   /*IMPRESORA*/
+root@Redes:~# 
+
+root@Redes:~# snmpwalk -v2c -c public 170.210.101.102 1.3.6.1.2 pedir solamente los atributos de una rama en particular
+
+
+
+
+root@Redes:~# snmpwalk -v2c -m ALL -c public 170.210.101.102 > redesmib.txt 
+muestra detalles de un dispositivo en particular mib.txt--->salida
+
+
+root@Redes:~# mcedit /etc/snmp/snmp.conf   abre el archivo
+
+
+tiempo que tardo en ejecutarse
+root@Redes:/home/alumno# time snmpwalk -v1 -c public 170.210.101.102 1.3.6.1.2.1.43 > salida1bis.txt
+real	0m0.766s
+user	0m0.068s
+sys	0m0.040s
+
+
+root@Redes:/home/alumno# time snmpbulkwalk -v2c -c public 170.210.101.102 1.3.6.1.2.1.43 > salida2.txt
+
+real	0m0.134s
+user	0m0.028s
+sys	0m0.008s
+
+
+para mover archivos
+root@Redes:~# mv salida2.pcap /home/alumno 
+root@Redes:~# mv salida1bis.pcap /home/alumno 
+
+cambiar prope
+root@Redes:/home/alumno# chown alumno salida*
+
+
+
+
+
+

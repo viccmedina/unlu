@@ -1,0 +1,6 @@
+site_name: AyGR UNLu - Medina, M. Victoria
+extra_css:
+    - css/style.css
+plugins:
+    - mkpdfs
+theme: simplex

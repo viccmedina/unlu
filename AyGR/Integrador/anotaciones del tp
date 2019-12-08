@@ -1,0 +1,12 @@
+Estación de Peaje
+Cada estación contará con cabinas compuestas de la siguiente manera:
+Un teléfono IP para comunicarse a la oficina de administración y a las demás cabinas de peaje.
+En la oficina de Administración se encontrará todo el equipamiento necesario para la gestión del tráfico 
+de las cámaras de vigilancia (Servidor primario y secundario de almacenamiento) y la salida
+para las demas estaciones y la casa central (Router). Además, solamente desde ahí se podrá llamar a casa central.  (VER..!)
+En el interior de las cabinas, el personal contará con una computadora (en donde estará el sistema de cobro) y un teléfono para poder 
+comunicarse entre las otras cabinas y la oficina de administración. En cuanto a la disposición de las cámaras, se tendrá una apuntando hacia
+los autos que se atienden y otras sobre el techo de las cabinas apuntando hacia la entrada y la salida del peaje.
+Para en cuanto al equipamiento de respaldo se contará con paneles solares para los momentos en que se produzcan cortes de energía eléctrica.
+Dichos paneles cargarán una batería alterna la cual se pondrá en funcionamiento en la situación descripta anteriormente. La misma se irá
+cargando cuando el suministro principal (energía eléctrica) se encuentre disponible.
