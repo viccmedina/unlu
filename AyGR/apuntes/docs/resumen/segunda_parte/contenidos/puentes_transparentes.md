@@ -1,5 +1,6 @@
 # Puentes Transparentes 
 
+
 Los puentes transparenes se denominan así porque su presencia y operación son transparentes para los 
 hosts de la red. Cuando se activan puentes transparentes, aprenden las ubicaciones de las estaciones
 de trabajo analizando las direcciones de origen de las tramas entrantes de todas las redes conectadas.
@@ -17,6 +18,7 @@ de entrada de dicha trama.
 Los puentes transparentes aislan el tráfico con éxito, reduciendo así el tráfico visto en cada segmento
 individual. Esto se denomina filtrado y ocurre cuando una dirección MAC de origen y destino residen en
 la misma interface del puente.
+
 
 ### Definición de Puente como dispositivo
 
