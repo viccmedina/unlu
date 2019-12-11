@@ -4,3 +4,5 @@
 - [Bridging Loops](contenidos/bucles_de_puente.md)
 - [Spanning Tree](contenidos/spanning_tree.md)
 - [VoIP](contenidos/voip.md)
+- [Seguridad en redes](contenidos/seguridad_en_redes.md)
+- [Firewalls](contenidos/firewalls.md)
